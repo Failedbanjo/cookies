@@ -3,6 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="cabeceros" />
+      <artifact name="cabeceros" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,7 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/CabecerasHttpRequestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Producto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoXlsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductosServicesImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,10 +48,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3558NMo4ViTD6kWi0mOAHUK0m4c" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,6 +64,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Tomcat Server.Tomcat 11.0.13.executor": "Run",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -168,6 +176,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="cabeceros" />
+          <artifact name="cabeceros" />
         </option>
       </method>
     </configuration>
@@ -188,6 +197,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761172419787</updated>
       <workItem from="1762388534027" duration="1999000" />
+      <workItem from="1762436378579" duration="5015000" />
     </task>
     <servers />
   </component>
