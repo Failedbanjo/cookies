@@ -12,31 +12,66 @@ import service.ProductosServicesImplement;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-//Ponemos las 2 rutas que se van a implementar
 
-@WebServlet ({"/productos.xls","/productos.html"})
-
+/**
+ * Clase ProductoXlsServlet.
+ *
+ * @author Genesis
+ * @version 1.0
+ * @since 2025-11-06
+ *
+ * Descripción:
+ * Este servlet genera una tabla HTML con el listado de productos y permite exportarla
+ * como archivo Excel (.xls). Utiliza la implementación {ProductosServicesImplement}
+ * para obtener los datos desde el modelo {Producto}.
+ *
+ * Está mapeado a dos rutas: <b>/productos.html</b> y <b>/productos.xls</b>.
+ * Dependiendo de la extensión solicitada, la respuesta se mostrará como página HTML
+ * o se descargará como archivo de Excel.
+ */
+@WebServlet({"/productos.xls", "/productos.html"})
 public class ProductoXlsServlet extends HttpServlet {
+
+    /**
+     * Metodo que gestiona las peticiones HTTP GET.
+     *
+     * @param req  Objeto {HttpServletRequest} que contiene la solicitud del cliente.
+     * @param resp Objeto {HttpServletResponse} que permite enviar la respuesta al cliente.
+     * @throws ServletException Si ocurre un error general del servlet.
+     * @throws IOException Si ocurre un error de entrada o salida durante el proceso.
+     *
+     * Descripción:
+     * Este metodo obtiene la lista de productos del servicio, determina si la salida
+     * debe mostrarse como HTML o como Excel, y genera dinámicamente una tabla con los datos.
+     * Si se accede desde <b>/productos.xls</b>, se envía el archivo Excel como descarga.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //Se crea un nuevo objeto llamado service con la clase que implementó la interfaz
+        // Se crea un objeto del servicio que implementa la interfaz ProductoServices
         ProductoServices service = new ProductosServicesImplement();
 
-        //se crea una lista llamando al metodo listar de mi interfaz
-        List<Producto>productos = service.listar();
+        // Se obtiene la lista de productos usando el metodo listar()
+        List<Producto> productos = service.listar();
+
+        // Tipo de contenido por defecto: HTML
         resp.setContentType("text/html;charset=UTF-8");
 
+        // Verificamos si la ruta termina en ".xls"
         String servletPath = req.getServletPath();
         boolean esXls = servletPath.endsWith(".xls");
 
+        // Si la ruta es .xls, se configura la respuesta para descarga en formato Excel
         if (esXls) {
             resp.setContentType("application/vnd.ms-excel");
             resp.setHeader("Content-Disposition", "attachment; filename=productos.xls");
         }
 
-        try(PrintWriter out = resp.getWriter()) {
-            if(!esXls) {
+        // Escribimos la salida (HTML o Excel)
+        try (PrintWriter out = resp.getWriter()) {
+
+            // Si no es Excel, generamos la estructura completa de la página HTML
+            if (!esXls) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
@@ -49,14 +84,17 @@ public class ProductoXlsServlet extends HttpServlet {
                 out.println("<p><a href=\"" + req.getContextPath() + "/productojson" + "\">Mostrar Json</a></p>");
             }
 
-            out.println("<table>");
+            // Se construye la tabla de productos
+            out.println("<table border='1'>");
             out.println("<tr>");
             out.println("<th>ID PRODUCTO</th>");
             out.println("<th>NOMBRE</th>");
             out.println("<th>TIPO</th>");
             out.println("<th>PRECIO</th>");
             out.println("</tr>");
-            productos.forEach(p ->{
+
+            // Recorremos la lista de productos y generamos una fila por cada uno
+            productos.forEach(p -> {
                 out.println("<tr>");
                 out.print("<td>" + p.getIdProducto() + "</td>");
                 out.print("<td>" + p.getNombre() + "</td>");
@@ -64,7 +102,10 @@ public class ProductoXlsServlet extends HttpServlet {
                 out.print("<td>" + p.getPrecio() + "</td>");
                 out.println("</tr>");
             });
+
             out.println("</table>");
+
+            // Si no es Excel, cerramos las etiquetas HTML
             if (!esXls) {
                 out.println("</body>");
                 out.println("</html>");
@@ -72,3 +113,4 @@ public class ProductoXlsServlet extends HttpServlet {
         }
     }
 }
+
