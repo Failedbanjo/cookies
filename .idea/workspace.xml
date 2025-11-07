@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="Comentarios en interface ProductoServices" />
+    <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="Comentarios en ProductosServicesImplement">
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProductoJsonServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoJsonServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +207,7 @@
       <updated>1761172419787</updated>
       <workItem from="1762388534027" duration="1999000" />
       <workItem from="1762436378579" duration="5015000" />
-      <workItem from="1762474851814" duration="4508000" />
+      <workItem from="1762474851814" duration="5052000" />
     </task>
     <task id="LOCAL-00001" summary="Implementacion del json y arreglo en webservlets">
       <option name="closed" value="true" />
@@ -231,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762479354152</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Comentarios en ProductosServicesImplement">
+      <option name="closed" value="true" />
+      <created>1762479631275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762479631275</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +251,7 @@
     <MESSAGE value="Implementacion del json y arreglo en webservlets" />
     <MESSAGE value="Comentarios en models Producto" />
     <MESSAGE value="Comentarios en interface ProductoServices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comentarios en interface ProductoServices" />
+    <MESSAGE value="Comentarios en ProductosServicesImplement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comentarios en ProductosServicesImplement" />
   </component>
 </project>
