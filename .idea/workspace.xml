@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="Comentarios en ProductoJsonServlet">
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProductoXlsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoXlsServlet.java" afterDir="false" />
+    <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="Comentarios en ProductoXlsServlet">
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/models/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/models/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/service/ProductosServicesImplement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/service/ProductosServicesImplement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/servlet/ProductoJsonServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/servlet/ProductoJsonServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/servlet/ProductoXlsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/WEB-INF/classes/servlet/ProductoXlsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +211,7 @@
       <updated>1761172419787</updated>
       <workItem from="1762388534027" duration="1999000" />
       <workItem from="1762436378579" duration="5015000" />
-      <workItem from="1762474851814" duration="5498000" />
+      <workItem from="1762474851814" duration="5986000" />
     </task>
     <task id="LOCAL-00001" summary="Implementacion del json y arreglo en webservlets">
       <option name="closed" value="true" />
@@ -249,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762479938788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Comentarios en ProductoXlsServlet">
+      <option name="closed" value="true" />
+      <created>1762480383785</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762480383785</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +273,7 @@
     <MESSAGE value="Comentarios en interface ProductoServices" />
     <MESSAGE value="Comentarios en ProductosServicesImplement" />
     <MESSAGE value="Comentarios en ProductoJsonServlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comentarios en ProductoJsonServlet" />
+    <MESSAGE value="Comentarios en ProductoXlsServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comentarios en ProductoXlsServlet" />
   </component>
 </project>
