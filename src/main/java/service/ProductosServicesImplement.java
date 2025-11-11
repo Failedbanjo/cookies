@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Clase ProductosServicesImplement.
  *
- * @author Genesis Escobar
+ * @author Jair Patiño
  * @version 1.0
  * @since 2025-11-06
  *
@@ -42,4 +42,3 @@ public class ProductosServicesImplement implements ProductoServices {
         );
     }
 }
-

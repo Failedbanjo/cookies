@@ -2,6 +2,7 @@ package servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,12 +12,14 @@ import service.ProductosServicesImplement;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Clase ProductoXlsServlet.
  *
- * @author Genesis
+ * @author Jair Patiño
  * @version 1.0
  * @since 2025-11-06
  *
@@ -54,38 +57,45 @@ public class ProductoXlsServlet extends HttpServlet {
         // Se obtiene la lista de productos usando el metodo listar()
         List<Producto> productos = service.listar();
 
-        // Tipo de contenido por defecto: HTML
+        Cookie[] cookies = req.getCookies() != null ? req.getCookies() : new Cookie[0];
+        Optional<String> cookieOptional = Arrays.stream(cookies)
+                .filter(c -> "username".equals(c.getName()))
+                .map(Cookie::getValue)
+                .findAny();
+        boolean sesionIniciada = cookieOptional.isPresent();
+
         resp.setContentType("text/html;charset=UTF-8");
 
-        // Verificamos si la ruta termina en ".xls"
         String servletPath = req.getServletPath();
         boolean esXls = servletPath.endsWith(".xls");
 
-        // Si la ruta es .xls, se configura la respuesta para descarga en formato Excel
         if (esXls) {
             resp.setContentType("application/vnd.ms-excel");
             resp.setHeader("Content-Disposition", "attachment; filename=productos.xls");
         }
 
-        // Escribimos la salida (HTML o Excel)
         try (PrintWriter out = resp.getWriter()) {
 
-            // Si no es Excel, generamos la estructura completa de la página HTML
             if (!esXls) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<meta charset=\"utf-8\">");
                 out.println("<title>Listado Productos</title>");
+
+                // --- CAMBIO AQUÍ: Reemplazamos <style> por <link> ---
+                out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + req.getContextPath() + "/css/estilos.css\">");
+
                 out.println("</head>");
-                out.println("<body>");
+                // --- CAMBIO AQUÍ: Añadida clase al body ---
+                out.println("<body class='productos-page'>");
                 out.println("<h1>Listado de Productos</h1>");
                 out.println("<p><a href=\"" + req.getContextPath() + "/productos.xls" + "\">Exportar a Excel</a></p>");
                 out.println("<p><a href=\"" + req.getContextPath() + "/productojson" + "\">Mostrar Json</a></p>");
+                out.println("<p><a href=\"" + req.getContextPath() + "/index.html" + "\">Volver al Inicio</a></p>");
             }
 
-            // Se construye la tabla de productos
-            out.println("<table border='1'>");
+            out.println("<table>");
             out.println("<tr>");
             out.println("<th>ID PRODUCTO</th>");
             out.println("<th>NOMBRE</th>");
@@ -93,19 +103,23 @@ public class ProductoXlsServlet extends HttpServlet {
             out.println("<th>PRECIO</th>");
             out.println("</tr>");
 
-            // Recorremos la lista de productos y generamos una fila por cada uno
             productos.forEach(p -> {
                 out.println("<tr>");
                 out.print("<td>" + p.getIdProducto() + "</td>");
                 out.print("<td>" + p.getNombre() + "</td>");
                 out.print("<td>" + p.getTipo() + "</td>");
-                out.print("<td>" + p.getPrecio() + "</td>");
+
+                if (sesionIniciada) {
+                    out.print("<td>" + p.getPrecio() + "</td>");
+                } else {
+                    out.print("<td>(No disponible)</td>");
+                }
+
                 out.println("</tr>");
             });
 
             out.println("</table>");
 
-            // Si no es Excel, cerramos las etiquetas HTML
             if (!esXls) {
                 out.println("</body>");
                 out.println("</html>");
@@ -113,4 +127,3 @@ public class ProductoXlsServlet extends HttpServlet {
         }
     }
 }
-

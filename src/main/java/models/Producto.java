@@ -4,7 +4,7 @@ package models;
  * Clase Producto que representa un objeto con sus atributos básicos:
  * id del producto, nombre, tipo y precio.
  *
- * @author Genesis Escobar
+ * @author Jair Patiño
  * @version 1.0
  * @since 2025-11-06
  *
@@ -114,5 +114,3 @@ public class Producto {
         this.precio = precio;
     }
 }
-
-

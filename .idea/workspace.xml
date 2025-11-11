@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="cabeceros" />
+      <artifact name="cabeceros:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,7 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f85eb48f-50d5-4c72-b0aa-b3199e98422d" name="Changes" comment="programa con login en jsp falta agregar cabeceros en productos y mostrar el precio en caso de haber loggeado">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/estilos.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cabeceros/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cabeceros/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ProductoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProductoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ProductosServicesImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProductosServicesImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProductoJsonServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoJsonServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProductoXlsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProductoXlsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +46,12 @@
     &quot;assignee&quot;: &quot;GenesisEsc&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/GenesisEsc/cabeceros.git&quot;,
-    &quot;accountId&quot;: &quot;b497f946-a8bc-436d-9105-90a98910c2c2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Failedbanjo/cookies.git",
+    "accountId": "ba430872-de1b-4336-adca-c0f1d12e3e5a"
   }
-}</component>
+}]]></component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -71,8 +82,11 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 11.0.13.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Usuario/Desktop/proyectosintellij/cookies",
     "node.js.detected.package.eslint": "true",
@@ -84,6 +98,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -110,7 +125,7 @@
     <configuration name="Tomcat 11.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.13" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="cabeceros">
+        <artifact name="cabeceros:war">
           <settings>
             <option name="CONTEXT_PATH" value="/cabeceros" />
           </settings>
@@ -190,7 +205,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="cabeceros" />
+          <artifact name="cabeceros:war" />
         </option>
       </method>
     </configuration>
@@ -198,8 +213,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -215,6 +230,7 @@
       <workItem from="1762474851814" duration="5986000" />
       <workItem from="1762780388021" duration="75000" />
       <workItem from="1762780491548" duration="4879000" />
+      <workItem from="1762822163724" duration="4922000" />
     </task>
     <task id="LOCAL-00001" summary="Implementacion del json y arreglo en webservlets">
       <option name="closed" value="true" />

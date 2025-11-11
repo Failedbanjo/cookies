@@ -18,6 +18,15 @@ public class LoginServlet extends HttpServlet {
     final static String USERNAME = "admin";
     final static String PASSWORD = "12345";
 
+    // --- CAMBIO AQUÍ: Modificamos este método para que imprima el <link> ---
+    private void imprimirHead(PrintWriter out, String titulo, String contextPath) {
+        out.println("<head>");
+        out.println("<meta charset='utf-8'>");
+        out.println("<title>" + titulo + "</title>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + contextPath + "/css/estilos.css\">");
+        out.println("</head>");
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Creamos la cookie
@@ -36,13 +45,12 @@ public class LoginServlet extends HttpServlet {
                 //Crea la plantilla html
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
-                out.println("<head>");
-                out.println("<meta charset='utf-8'>");
-                out.println("<title>login" + cookieOptional.get()+"</title>");
-                out.println("</head>");
+                // --- CAMBIO AQUÍ: Llamada al nuevo método ---
+                imprimirHead(out, "Login " + cookieOptional.get(), req.getContextPath());
                 out.println("<body>");
                 out.println("<h1>Login</h1>");
-                out.println("Bienvenido a mi sistema chaval " + cookieOptional.get() +" has iniciado sesion");
+                out.println("Bienvenido a mi sistema :D <span class='admin-text'>" + cookieOptional.get() +"</span> has iniciado sesion");
+                out.println("<br><a href='" +req.getContextPath() +"/index.html'>Volver al inicio</a>");
                 out.println("</body>");
                 out.println("</html>");
             }
@@ -60,15 +68,14 @@ public class LoginServlet extends HttpServlet {
             resp.setContentType("text/html;charset=UTF-8");
             Cookie cookie = new Cookie("username", username);
             resp.addCookie(cookie);
+
             try(PrintWriter out = resp.getWriter()){
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
-                out.println("<head>");
-                out.println("<meta charset='utf-8'>");
-                out.println("<title>login correcto</title>");
-                out.println("</head>");
+                // --- CAMBIO AQUÍ: Llamada al nuevo método ---
+                imprimirHead(out, "Login Correcto", req.getContextPath());
                 out.println("<body>");
-                out.println("<h1>Bienvenidos a mi aplicación chavalesssshhh" + username + " Sesión con exito mijas!!</h1>");
+                out.println("<h1>Bienvenidos a mi aplicación <span class='admin-text'>" + username + "</span> Inicio sesión con éxito :D</h1>");
                 out.println("<a href='" +req.getContextPath() +"/index.html'>Volver al inicio</a>");
                 out.println("</body>");
                 out.println("</html>");

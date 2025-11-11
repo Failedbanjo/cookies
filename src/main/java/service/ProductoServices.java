@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Interfaz ProductoServices.
  *
- * @author Genesis Escobar
+ * @author Jair Patiño
  * @version 1.0
  * @since 2025-11-06
  *

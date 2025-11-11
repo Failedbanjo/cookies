@@ -9,23 +9,27 @@
 <%---Creación del formulario---%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilos.css">
+
 </head>
-<body>
-<div>
-<form action = "/cabeceros/login" method="post">
-    <div>
-        <label for="user"> Ingrese el usuario </label>
-        <input type="text" id="user" name="user">
-    </div>
-    <div>
-        <label for="password">Ingrese el password</label>
-        <input type="password" id="password" name="password">
-    </div>
-    <div>
-        <input type="submit" value="entrar">
-    </div>
-</form>
+<body class="login-page">
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="/cabeceros/login" method="post">
+        <div class="form-group">
+            <label for="user"> Ingrese el usuario </label>
+            <input type="text" id="user" name="user">
+        </div>
+        <div class="form-group">
+            <label for="password">Ingrese el password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Entrar">
+        </div>
+    </form>
 </div>
 </body>
 </html>
